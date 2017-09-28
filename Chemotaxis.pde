@@ -1,9 +1,9 @@
-float size = 10;
+float sizeB = 10;
 Bacteria[] colony;
 
 void setup()
 {
-  size (400,400);
+  size(400,400);
   colony = new Bacteria [300];
   for (int i=0; i< colony.length; i++)
   {
@@ -45,20 +45,20 @@ void draw(){
     if ((get(colorguessX,dropY)!= color(155,155,155)) || (get(colorguessX2, dropY) != color(155,155,155)))
         {
         float z = 0.25;
-        size = size - z;
+        sizeB = sizeB - z;
         }
     else if ((get(colorguessX,dropY)== color(155,155,155)) || (get(colorguessX2, dropY) == color(155,155,155)))
         {
           float z = 0.25;
-          size = size + z;
+          sizeB = sizeB + z;
         }
   }
-  if (size >= 20){
+  if (sizeB >= 20){
     fill (255,0,0);
     textSize(30);
     text ("You Lose", 150,200);
   }
-  else if (size <=-5)
+  else if (sizeB <=-5)
   {
      fill (255,0,0);
     textSize(30);
@@ -101,7 +101,7 @@ class Bacteria{
     strokeWeight(2);
     stroke (193,bColor +24,43);
     fill (236,255,131);
-    ellipse (bX,bY,size+20,size+8);
+    ellipse (bX,bY,sizeB+20,sizeB+8);
     fill (247,157,127);
     noStroke();
     ellipse (bX,bY,5,5);
