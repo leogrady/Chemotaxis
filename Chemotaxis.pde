@@ -23,14 +23,12 @@ void draw(){
     colony[i].show();
   }
   
-   noStroke();
+  noStroke();
   fill(255,255,255,200);
 
   ellipse (mouseX,mouseY-100,40,60);
   rect (mouseX - 15,mouseY-80,30,130);
   triangle (mouseX - 15,mouseY+50,mouseX+15,mouseY+50,mouseX,mouseY +75);
-  //fill(200);
-  //arc (mouseX,mouseY-80,30,25,0,PI);
   stroke(255,0,0);
   for (int y = 30; y < 150; y = y+10)
   line (mouseX-15,mouseY-100+y,mouseX,mouseY-100+y);
@@ -46,7 +44,6 @@ void draw(){
     int colorguessX2 = dropX +10;
     if ((get(colorguessX,dropY)!= color(155,155,155)) || (get(colorguessX2, dropY) != color(155,155,155)))
         {
-        
         float z = 0.25;
         size = size - z;
         }
@@ -61,7 +58,7 @@ void draw(){
     textSize(30);
     text ("You Lose", 150,200);
   }
-  else if (size <=0)
+  else if (size <=-5)
   {
      fill (255,0,0);
     textSize(30);
